@@ -19,8 +19,6 @@ def main():
         value = int(weight)
         value_of_items.append(value)
 
-    #  result = hill_climbing_random_restarts(problem, 10, 10, viewer=knapsack_problem.my_viewer)
-    #  result = hill_climbing(problem=problem, iterations_limit=0, viewer=knapsack_problem.my_viewer)
     problem = knapsack_problem.KnapsackProblem(number_of_items=number_of_items,
                                                knapsack_capacity=knapsack_capacity,
                                                weights_of_items=weight_of_items,
@@ -28,6 +26,8 @@ def main():
 
     result = genetic(problem=problem, population_size=100, mutation_chance=0.1,
                      iterations_limit=0, viewer=knapsack_problem.my_viewer)
+    #  result = hill_climbing_random_restarts(problem, 10, 10, viewer=knapsack_problem.my_viewer)
+    #  result = hill_climbing(problem=problem, iterations_limit=0, viewer=knapsack_problem.my_viewer)
 
     print(result.state)
     print(f'Value: {result.value}')
